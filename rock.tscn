@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://caxrfuuv6p4dg"]
+
+[ext_resource type="Script" path="res://rock.gd" id="1_15w10"]
+[ext_resource type="PackedScene" uid="uid://dhi36sxbtctsg" path="res://interactble_component.tscn" id="2_utary"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wmcn"]
+size = Vector2(10, 10)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6m61w"]
+size = Vector2(10, 10)
+
+[node name="Rock" type="StaticBody2D"]
+script = ExtResource("1_15w10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7wmcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_6m61w")
+
+[node name="InteractbleComponent" parent="." instance=ExtResource("2_utary")]
