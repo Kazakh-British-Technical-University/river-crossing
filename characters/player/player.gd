@@ -7,9 +7,6 @@ extends CharacterBody2D
 func _process(_delta):
 	var movement_vector := get_movement_vector()
 	var direction := movement_vector.normalized()
-	
-	if (direction != Vector2.ZERO):
-		$InteractorComponent.rotation = direction.angle()
 	velocity = direction * MAX_SPEED
 	move_and_slide()
 
