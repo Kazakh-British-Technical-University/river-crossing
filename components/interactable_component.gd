@@ -1,8 +1,7 @@
 extends Area2D
 class_name InteractableComponent
 
-signal interacted
+signal interacted	
 
 func interact():
-	print("interacted")
 	interacted.emit()

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,4 +9,3 @@ func _ready():
 func on_interacted():
 	PlayerResources.add_planks(1)
 	queue_free()
-

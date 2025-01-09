@@ -1,15 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqkpnex367hns"]
+[gd_scene load_steps=4 format=3 uid="uid://cqkpnex367hns"]
 
 [ext_resource type="Script" path="res://objects/water_barrier/water_barrier.gd" id="1_otyte"]
-[ext_resource type="Texture2D" uid="uid://brc0hdl8yts7h" path="res://icon.svg" id="3_pmm74"]
 [ext_resource type="PackedScene" uid="uid://dhi36sxbtctsg" path="res://components/interactble_component.tscn" id="3_ytif5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmcco"]
-size = Vector2(16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_53rto"]
-atlas = ExtResource("3_pmm74")
-region = Rect2(64, 32, 16, 16)
+size = Vector2(17, 17)
 
 [node name="WaterBarrier" type="Node2D"]
 script = ExtResource("1_otyte")
@@ -20,6 +15,3 @@ script = ExtResource("1_otyte")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
 shape = SubResource("RectangleShape2D_mmcco")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_53rto")
