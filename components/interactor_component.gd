@@ -1,13 +1,30 @@
 extends Area2D
 
 
+@export var highlight_scene: PackedScene
+var highlight: Node2D
+
+
 var interactable_list = []
 
 
 func _ready():
 	area_entered.connect(on_area_entered)
 	area_exited.connect(on_area_exited)
+
+
+func _process(_delta):
+	if (highlight == null):
+		highlight = highlight_scene.instantiate()
+		get_tree().root.add_child(highlight)
 	
+	if (len(interactable_list) == 0):
+		highlight.visible = false
+		return
+	
+	highlight.visible = true
+	highlight.global_position = _get_priority_interactable().global_position
+
 
 func interact():
 	if (len(interactable_list) == 0):
@@ -20,7 +37,6 @@ func _get_priority_interactable():
 	var min_angle = abs(get_angle_to(interactable_list[0].global_position))
 	for interactable in interactable_list:
 		var angle = abs(get_angle_to(interactable.global_position))
-		print(angle / 2 / PI * 360 )
 		if (angle < min_angle):
 			priority_interactable = interactable
 			min_angle = angle
