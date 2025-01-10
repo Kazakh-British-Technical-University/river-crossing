@@ -1,4 +1,5 @@
 extends Node
+class_name PlayerResources
 
 signal planks_updated(new_amount: int)
 

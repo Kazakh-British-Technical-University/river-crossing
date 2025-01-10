@@ -1,5 +1,6 @@
 extends Node2D
-class_name Game
 
-static func win():
-	print("you won")
+
+func _ready():
+	Global.level_manager = $LevelManager
+	Global.player_resources = $PlayerResources
