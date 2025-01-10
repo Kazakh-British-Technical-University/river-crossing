@@ -16,7 +16,7 @@ func _ready():
 func _process(_delta):
 	if (highlight == null):
 		highlight = highlight_scene.instantiate()
-		get_tree().root.add_child(highlight)
+		add_child(highlight)
 	
 	if (len(interactable_list) == 0):
 		highlight.visible = false
