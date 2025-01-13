@@ -7,5 +7,5 @@ func _ready():
 
 
 func on_interacted():
-	Global.player_resources.add_planks(1)
+	PlayerResources.add_planks(1)
 	queue_free()

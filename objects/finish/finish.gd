@@ -12,4 +12,4 @@ func _on_body_entered(body):
 
 
 func change_level():
-	Global.level_manager.load_next_level()
+	LevelManager.load_next_level()
