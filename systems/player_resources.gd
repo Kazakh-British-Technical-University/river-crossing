@@ -20,3 +20,8 @@ func try_spend_planks(amount: int):
 	planks -= amount
 	planks_updated.emit(planks)
 	return true
+	
+
+func reset():
+	planks = 0
+	planks_updated.emit(planks)

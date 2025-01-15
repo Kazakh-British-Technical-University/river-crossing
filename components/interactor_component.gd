@@ -1,41 +1,41 @@
 extends Area2D
 
 
-@export var highlight_scene: PackedScene
-var highlight: Node2D
+@export var _highlight_scene: PackedScene
+var _highlight: Node2D
 
 
-var interactable_list = []
+var _interactable_list = []
 
 
 func _ready():
-	area_entered.connect(on_area_entered)
-	area_exited.connect(on_area_exited)
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
 
 
 func _process(_delta):
-	if (highlight == null):
-		highlight = highlight_scene.instantiate()
-		add_child(highlight)
+	if (_highlight == null):
+		_highlight = _highlight_scene.instantiate()
+		add_child(_highlight)
 	
-	if (len(interactable_list) == 0):
-		highlight.visible = false
+	if (len(_interactable_list) == 0):
+		_highlight.visible = false
 		return
 	
-	highlight.visible = true
-	highlight.global_position = _get_priority_interactable().global_position
+	_highlight.visible = true
+	_highlight.global_position = _get_priority_interactable().global_position
 
 
 func interact():
-	if (len(interactable_list) == 0):
+	if (len(_interactable_list) == 0):
 		return
 	_get_priority_interactable().interact()
 
 
 func _get_priority_interactable():
-	var priority_interactable = interactable_list[0]
-	var min_angle = abs(get_angle_to(interactable_list[0].global_position))
-	for interactable in interactable_list:
+	var priority_interactable = _interactable_list[0]
+	var min_angle = abs(get_angle_to(_interactable_list[0].global_position))
+	for interactable in _interactable_list:
 		var angle = abs(get_angle_to(interactable.global_position))
 		if (angle < min_angle):
 			priority_interactable = interactable
@@ -44,11 +44,11 @@ func _get_priority_interactable():
 	return priority_interactable
 
 
-func on_area_entered(area):
-	if (area is InteractableComponent && area not in interactable_list):
-		interactable_list.append(area)
+func _on_area_entered(area):
+	if (area is InteractableComponent && area not in _interactable_list):
+		_interactable_list.append(area)
 
 
-func on_area_exited(area):
-	if (area in interactable_list):
-		interactable_list.erase(area)
+func _on_area_exited(area):
+	if (area in _interactable_list):
+		_interactable_list.erase(area)

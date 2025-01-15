@@ -5,14 +5,17 @@ class_name Player
 @export var MAX_SPEED = 300.0
 
 
-var is_control_locked = false;
+var _is_control_locked = false;
 
 
 func _process(_delta):
-	if (Input.is_action_just_pressed("interact")):
+	if (Input.is_action_just_pressed("restart") && !_is_control_locked):
+		LevelManager.reload_current_level()
+	
+	if (Input.is_action_just_pressed("interact") && !_is_control_locked):
 		$InteractorComponent.interact()
 	
-	var movement_vector := get_movement_vector()
+	var movement_vector := _get_movement_vector()
 	var direction := movement_vector.normalized()
 	
 	if (direction != Vector2.ZERO):
@@ -22,8 +25,8 @@ func _process(_delta):
 	move_and_slide()
 
 
-func get_movement_vector() -> Vector2:
-	if (is_control_locked):
+func _get_movement_vector() -> Vector2:
+	if (_is_control_locked):
 		return Vector2.ZERO
 	
 	var x_movement := Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -33,4 +36,4 @@ func get_movement_vector() -> Vector2:
 
 func win():
 	$Sprite.play("win")
-	is_control_locked = true
+	_is_control_locked = true

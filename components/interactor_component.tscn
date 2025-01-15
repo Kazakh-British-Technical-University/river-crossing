@@ -7,7 +7,7 @@
 
 [node name="InteractorComponent" type="Area2D"]
 script = ExtResource("1_v2t05")
-highlight_scene = ExtResource("2_mxkvl")
+_highlight_scene = ExtResource("2_mxkvl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h4kr1")

@@ -1,22 +1,30 @@
 extends Node
 
 
-@export var levels: Array[PackedScene]
-@export var next_level_index = 0
+@export var _levels: Array[PackedScene]
+@export var _next_level_index = 0
 
 
-var current_level
+var _current_level
 
 
 func load_next_level():
-	if (next_level_index >= len(levels)):
+	if (_next_level_index >= len(_levels)):
 		return
-	if (current_level != null):
-		current_level.queue_free()
-	load_level(next_level_index)
-	next_level_index += 1
+	if (_current_level != null):
+		_current_level.queue_free()
+	load_level(_next_level_index)
+	_next_level_index += 1
 
 
 func load_level(index):
-	current_level = levels[index].instantiate()
-	add_child(current_level)
+	PlayerResources.reset()
+	_current_level = _levels[index].instantiate()
+	add_child(_current_level)
+	
+
+func reload_current_level():
+	if (_current_level != null):
+		_current_level.queue_free()
+		load_level(_next_level_index - 1)
+		

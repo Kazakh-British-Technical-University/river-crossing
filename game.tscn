@@ -1,16 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0rrskx24aglp"]
+[gd_scene load_steps=3 format=3 uid="uid://b0rrskx24aglp"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_cu8lr"]
-[ext_resource type="PackedScene" uid="uid://b6suj88i4kf2i" path="res://systems/level_manager.tscn" id="2_sv53e"]
-[ext_resource type="PackedScene" uid="uid://dbvsynmatqrbo" path="res://systems/player_resources.tscn" id="3_avlqd"]
 [ext_resource type="PackedScene" uid="uid://d4mt56u4neqdj" path="res://ui/ui.tscn" id="4_450j5"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_cu8lr")
-
-[node name="LevelManager" parent="." instance=ExtResource("2_sv53e")]
-
-[node name="PlayerResources" parent="." instance=ExtResource("3_avlqd")]
 
 [node name="UI" parent="." instance=ExtResource("4_450j5")]
 follow_viewport_scale = 272.728
