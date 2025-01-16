@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="River Crossing"
-run/main_scene="res://game.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManager="*res://systems/level_manager.tscn"
-PlayerResources="*res://systems/player_resources.tscn"
+LevelManager="*res://scenes/systems/level_manager.tscn"
+PlayerResources="*res://scenes/systems/player_resources.tscn"
 
 [display]
 

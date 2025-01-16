@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4mt56u4neqdj"]
+
+[ext_resource type="Script" path="res://scenes/ui/planks_label.gd" id="1_gqxwt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0v5y4"]
+font_size = 32
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="PlanksLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+text = "9999"
+label_settings = SubResource("LabelSettings_0v5y4")
+script = ExtResource("1_gqxwt")
