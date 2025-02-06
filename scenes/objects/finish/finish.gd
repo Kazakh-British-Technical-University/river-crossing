@@ -1,8 +1,8 @@
-extends Node2D
+extends Area2D
 
 
 func _ready():
-	$Area2D.body_entered.connect(_on_body_entered)
+	body_entered.connect(_on_body_entered)
 
 
 func _on_body_entered(body):
