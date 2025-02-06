@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dhi36sxbtctsg" path="res://scenes/components/interactble_component.tscn" id="3_ytif5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmcco"]
-size = Vector2(17, 17)
+size = Vector2(16, 16)
 
 [node name="WaterBarrier" type="Node2D"]
 script = ExtResource("1_otyte")
