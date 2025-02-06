@@ -14,7 +14,11 @@ func _process(_delta):
 	
 	if (Input.is_action_just_pressed("interact") && !_is_control_locked):
 		$InteractorComponent.interact()
-	
+
+	_move()
+
+
+func _move():
 	var movement_vector := _get_movement_vector()
 	var direction := movement_vector.normalized()
 	
