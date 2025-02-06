@@ -6,12 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmcco"]
 size = Vector2(16, 16)
 
-[node name="WaterBarrier" type="Node2D"]
+[node name="WaterBarrier" type="StaticBody2D"]
 script = ExtResource("1_otyte")
 
 [node name="InteractbleComponent" parent="." instance=ExtResource("3_ytif5")]
 
-[node name="Collider" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mmcco")
