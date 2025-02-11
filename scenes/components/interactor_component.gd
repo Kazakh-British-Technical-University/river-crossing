@@ -11,13 +11,12 @@ var _interactable_list = []
 func _ready():
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
+	
+	_highlight = _highlight_scene.instantiate()
+	add_child(_highlight)
 
 
 func _process(_delta):
-	if (_highlight == null):
-		_highlight = _highlight_scene.instantiate()
-		add_child(_highlight)
-	
 	if (len(_interactable_list) == 0):
 		_highlight.visible = false
 		return
