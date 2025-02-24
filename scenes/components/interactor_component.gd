@@ -23,6 +23,7 @@ func _process(_delta):
 	
 	_highlight.visible = true
 	_highlight.global_position = _get_priority_interactable().global_position
+	_highlight.global_rotation = 0
 
 
 func interact():
