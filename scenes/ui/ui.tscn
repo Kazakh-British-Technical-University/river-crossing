@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4mt56u4neqdj"]
 
-[ext_resource type="Script" path="res://scenes/ui/planks_label.gd" id="1_gqxwt"]
+[ext_resource type="Script" uid="uid://ckq8w5vmn7qch" path="res://scenes/ui/planks_label.gd" id="1_gqxwt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0v5y4"]
 font_size = 32

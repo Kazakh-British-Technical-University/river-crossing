@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqkpnex367hns"]
 
-[ext_resource type="Script" path="res://scenes/objects/water_barrier/water_barrier.gd" id="1_otyte"]
+[ext_resource type="Script" uid="uid://lwrsb5pww7ya" path="res://scenes/objects/water_barrier/water_barrier.gd" id="1_otyte"]
 [ext_resource type="PackedScene" uid="uid://dhi36sxbtctsg" path="res://scenes/components/interactble_component.tscn" id="3_ytif5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmcco"]
