@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0rrskx24aglp"]
+[gd_scene load_steps=2 format=3 uid="uid://b0rrskx24aglp"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_cu8lr"]
 [ext_resource type="PackedScene" uid="uid://d4mt56u4neqdj" path="res://scenes/ui/ui.tscn" id="4_450j5"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_cu8lr")
 
 [node name="UI" parent="." instance=ExtResource("4_450j5")]
 follow_viewport_scale = 272.728

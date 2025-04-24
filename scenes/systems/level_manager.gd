@@ -7,6 +7,8 @@ extends Node
 
 var _current_level
 
+func _ready():
+	load_next_level()
 
 func load_next_level():
 	if (_next_level_index >= len(_levels)):
